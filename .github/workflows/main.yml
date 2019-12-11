@@ -32,4 +32,5 @@ jobs:
           docker build -t back .
           docker tag back ${{ secrets.DOCKER_USER }}/back:${{  github.sha }}
           docker tag back ${{ secrets.DOCKER_USER }}/back:latest
+          docker push ${{ secrets.DOCKER_USER }}/back:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/back:latest
