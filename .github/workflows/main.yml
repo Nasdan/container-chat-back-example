@@ -10,19 +10,18 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    container:
+      image: node
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
       - name: Install & Tests
         run: |
           npm install
           npm test
   cd:
-    runs-on: ubuntu-latest
+    container:
+      image: node
     needs: ci
 
     steps:
