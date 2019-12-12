@@ -22,8 +22,6 @@ jobs:
           npm test
   cd:
     runs-on: ubuntu-latest
-    container:
-      image: node
     needs: ci
 
     steps:
